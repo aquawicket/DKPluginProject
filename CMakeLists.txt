@@ -11,10 +11,11 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.4)
 
 ##### CREATE Plugin1 #####
 PROJECT(Plugin1)
-FILE(GLOB Plugin1_SRC 
-	C:/digitalknob/DKPluginProject/Plugin1/*.h
-	C:/digitalknob/DKPluginProject/Plugin1/*.c
-	C:/digitalknob/DKPluginProject/Plugin1/*.cpp)
+FILE(GLOB Plugin1_SRC
+	${CMAKE_SOURCE_DIR}/Plugin1/*.h
+	${CMAKE_SOURCE_DIR}/Plugin1/*.h
+	${CMAKE_SOURCE_DIR}/Plugin1/*.c
+	${CMAKE_SOURCE_DIR}/Plugin1/*.cpp)
 ADD_LIBRARY(Plugin1 STATIC ${Plugin1_SRC})
 SET_TARGET_PROPERTIES(Plugin1 PROPERTIES LINKER_LANGUAGE C11)
 
@@ -22,9 +23,9 @@ SET_TARGET_PROPERTIES(Plugin1 PROPERTIES LINKER_LANGUAGE C11)
 ##### CREATE Plugin2 #####
 PROJECT(Plugin2)
 FILE(GLOB Plugin2_SRC 
-	C:/digitalknob/DKPluginProject/Plugin2/*.h
-	C:/digitalknob/DKPluginProject/Plugin2/*.c
-	C:/digitalknob/DKPluginProject/Plugin2/*.cpp)
+	${CMAKE_SOURCE_DIR}/Plugin2/*.h
+	${CMAKE_SOURCE_DIR}/Plugin2/*.c
+	${CMAKE_SOURCE_DIR}/Plugin2/*.cpp)
 ADD_LIBRARY(Plugin2 STATIC ${Plugin2_SRC})
 SET_TARGET_PROPERTIES(Plugin2 PROPERTIES LINKER_LANGUAGE C11)
 
@@ -32,9 +33,9 @@ SET_TARGET_PROPERTIES(Plugin2 PROPERTIES LINKER_LANGUAGE C11)
 #####  CREATE App #####
 PROJECT(App)
 FILE(GLOB App_SRC 
-	C:/digitalknob/DKPluginProject/App/*.h
-	C:/digitalknob/DKPluginProject/App/*.c
-	C:/digitalknob/DKPluginProject/App/*.cpp)
+	${CMAKE_SOURCE_DIR}/App/*.h
+	${CMAKE_SOURCE_DIR}/App/*.c
+	${CMAKE_SOURCE_DIR}/App/*.cpp)
 LIST(APPEND WIN_LIBS 
 	kernel32.lib
 	user32.lib
