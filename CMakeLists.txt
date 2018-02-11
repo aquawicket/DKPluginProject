@@ -4,14 +4,23 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.4)
 ##### CREATE 3rdParty1 #####
 ##TODO
 
+
 ##### CREATE 3rdParty2 #####
 ##TODO
 
+
 ##### CREATE Plugin1 #####
-##TODO
+PROJECT(Plugin1)
+FILE(GLOB Plugin1_SRC 
+	C:/digitalknob/DKPluginProject/Plugin1/*.h
+	C:/digitalknob/DKPluginProject/Plugin1/*.c
+	C:/digitalknob/DKPluginProject/Plugin1/*.cpp)
+ADD_LIBRARY(Plugin1 STATIC ${Plugin1_SRC})
+SET_TARGET_PROPERTIES(DK PROPERTIES LINKER_LANGUAGE C11)
 
 ##### CREATE Plugin2 #####
 ##TODO
+
 
 #####  CREATE App #####
 PROJECT(App)
