@@ -1,8 +1,14 @@
 ### DKPluginProject CMakeLists.txt FILE ###
 CMAKE_MINIMUM_REQUIRED(VERSION 3.4)
+INCLUDE(${CMAKE_SOURCE_DIR}/../DKCMake/FUNCTIONS.cmake)
+
 
 ##### CREATE 3rdParty1 #####
-##TODO
+IF(NOT EXISTS "${CMAKE_SOURCE_DIR}/3rdParty1/zlib-1.2.11")
+	DKSET(CURRENT_DIR ${DIGITALKNOB}/Download)
+	DKDOWNLOAD(http://digitalknob.com/Download/Libs/zlib1211.zip)
+	DKEXTRACT(${DIGITALKNOB}/Download/zlib1211.zip ${CMAKE_SOURCE_DIR}/3rdParty1)
+ENDIF()
 
 
 ##### CREATE 3rdParty2 #####
