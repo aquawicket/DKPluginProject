@@ -17,8 +17,8 @@ IF(NOT EXISTS "${ZLIB}/win32/Release")
 	DKSETPATH(${ZLIB}/${OS})
 	DKSET(QUEUE_BUILD ON)
 	WIN32_COMMAND(${CMAKE_COMMAND} -G "Visual Studio 14 2015" "-DCMAKE_C_FLAGS=/DTEST /DWIN32 /D_WINDOWS /W3 /nologo" "-DCMAKE_C_FLAGS_DEBUG=/MTd /Od /Ob0 /Zi /RTC1 /DDEBUG /D_DEBUG" "-DCMAKE_C_FLAGS_RELEASE=/MT /O2 /Ob2 /DNDEBUG" ${ZLIB})
-	WIN32_VS_DEBUG(zlib-1.2.11 zlib.sln zlibstatic)
-	WIN32_VS_RELEASE(zlib-1.2.11 zlib.sln zlibstatic)
+	WIN32_VS_DEBUG(zlib-1.2.11 zlib.sln zlib)
+	WIN32_VS_RELEASE(zlib-1.2.11 zlib.sln zlib)
 ENDIF()
 
 
