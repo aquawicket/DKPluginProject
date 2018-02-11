@@ -1,6 +1,6 @@
-//TODO
+//#include "windows.h"
 
-int main(int argc, char **argv)
+int main()
 {
-	exit(0);
+	return 0;
 }
