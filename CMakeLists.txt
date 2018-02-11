@@ -18,8 +18,15 @@ FILE(GLOB Plugin1_SRC
 ADD_LIBRARY(Plugin1 STATIC ${Plugin1_SRC})
 SET_TARGET_PROPERTIES(Plugin1 PROPERTIES LINKER_LANGUAGE C11)
 
+
 ##### CREATE Plugin2 #####
-##TODO
+PROJECT(Plugin2)
+FILE(GLOB Plugin2_SRC 
+	C:/digitalknob/DKPluginProject/Plugin2/*.h
+	C:/digitalknob/DKPluginProject/Plugin2/*.c
+	C:/digitalknob/DKPluginProject/Plugin2/*.cpp)
+ADD_LIBRARY(Plugin2 STATIC ${Plugin2_SRC})
+SET_TARGET_PROPERTIES(Plugin2 PROPERTIES LINKER_LANGUAGE C11)
 
 
 #####  CREATE App #####
