@@ -36,22 +36,22 @@ FILE(GLOB App_SRC
 	${CMAKE_SOURCE_DIR}/App/*.h
 	${CMAKE_SOURCE_DIR}/App/*.c
 	${CMAKE_SOURCE_DIR}/App/*.cpp)
-LIST(APPEND WIN_LIBS 
-	kernel32.lib
-	user32.lib
-	gdi32.lib
-	winspool.lib
-	shell32.lib
-	ole32.lib
-	oleaut32.lib
-	uuid.lib
-	comdlg32.lib
-	advapi32.lib
-	odbc32.lib
-	odbccp32.lib
-	opengl32.lib
-	DbgHelp.lib
-)
+#LIST(APPEND WIN_LIBS 
+#	kernel32.lib
+#	user32.lib
+#	gdi32.lib
+#	winspool.lib
+#	shell32.lib
+#	ole32.lib
+#	oleaut32.lib
+#	uuid.lib
+#	comdlg32.lib
+#	advapi32.lib
+#	odbc32.lib
+#	odbccp32.lib
+#	opengl32.lib
+#	DbgHelp.lib
+#)
 LIST(APPEND DEBUG_LIBS "")
 LIST(APPEND RELEASE_LIBS "")
 LIST(APPEND DEBUG_LINK_FLAGS /SUBSYSTEM:CONSOLE)
