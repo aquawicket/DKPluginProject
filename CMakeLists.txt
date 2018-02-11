@@ -1,4 +1,33 @@
 ### DKPluginProject CMakeLists.txt FILE ###
 CMAKE_MINIMUM_REQUIRED(VERSION 3.4)
 
-## TODO
+
+FILE(GLOB App_SRC 
+	C:/digitalknob/DKPluginProject/App/*.h
+	C:/digitalknob/DKPluginProject/App/*.c
+	C:/digitalknob/DKPluginProject/App/*.cpp)
+	
+LIST(APPEND WIN_LIBS 
+	kernel32.lib
+	user32.lib
+	gdi32.lib
+	winspool.lib
+	shell32.lib
+	ole32.lib
+	oleaut32.lib
+	uuid.lib
+	comdlg32.lib
+	advapi32.lib
+	odbc32.lib
+	odbccp32.lib
+	opengl32.lib
+	DbgHelp.lib
+)
+LIST(APPEND DEBUG_LIBS "")
+LIST(APPEND RELEASE_LIBS "")
+LIST(APPEND DEBUG_LINK_FLAGS "")
+LIST(APPEND RELEASE_LINK_FLAGS "")
+
+ADD_EXECUTABLE(App WIN32 ${App_SRC})
+##TARGET_LINK_LIBRARIES(App ${DEBUG_LIBS} ${RELEASE_LIBS} ${WIN_LIBS})
+##SET_TARGET_PROPERTIES(App PROPERTIES LINK_FLAGS_DEBUG ${DEBUG_FLAGS} LINK_FLAGS_RELEASE ${RELEASE_FLAGS})
