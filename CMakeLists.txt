@@ -5,7 +5,7 @@ INCLUDE(${CMAKE_SOURCE_DIR}/../DKCMake/FUNCTIONS.cmake)
 
 ##### CREATE 3rdParty1 #####
 IF(NOT EXISTS "${CMAKE_SOURCE_DIR}/3rdParty1/zlib-1.2.11")
-	DKSET(CURRENT_DIR ${DIGITALKNOB}/Download)
+	DKSET(CURRENT_DIR ${CMAKE_SOURCE_DIR}/../Download)
 	DKDOWNLOAD(http://digitalknob.com/Download/Libs/zlib1211.zip)
 	DKEXTRACT(${DIGITALKNOB}/Download/zlib1211.zip ${CMAKE_SOURCE_DIR}/3rdParty1)
 ENDIF()
