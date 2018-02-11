@@ -6,24 +6,21 @@ DKSET(REBUILDALL ON)
 INCLUDE(${CMAKE_SOURCE_DIR}/../DKCMake/OPTIONS.cmake)
 
 
-##### CREATE 3rdParty1 #####
-DKSET(ZLIB ${CMAKE_SOURCE_DIR}/3rdParty1/zlib-1.2.11)
+##### CREATE 3rdParty #####
+DKSET(ZLIB ${CMAKE_SOURCE_DIR}/3rdParty/zlib-1.2.11)
 IF(NOT EXISTS "${ZLIB}")
 	DKSET(CURRENT_DIR ${DIGITALKNOB}/Download)
 	DKDOWNLOAD(http://digitalknob.com/Download/Libs/zlib1211.zip)
-	DKEXTRACT(${DIGITALKNOB}/Download/zlib1211.zip ${CMAKE_SOURCE_DIR}/3rdParty1)
+	DKEXTRACT(${DIGITALKNOB}/Download/zlib1211.zip ${CMAKE_SOURCE_DIR}/3rdParty)
 ENDIF()
-##IF(NOT EXISTS "${ZLIB}/win32/Release")
+IF(NOT EXISTS "${ZLIB}/win32/Release")
 	DKSETPATH(${ZLIB}/${OS})
 	DKSET(QUEUE_BUILD ON)
 	WIN32_COMMAND(${CMAKE_COMMAND} -G "Visual Studio 14 2015" "-DCMAKE_C_FLAGS=/DTEST /DWIN32 /D_WINDOWS /W3 /nologo" "-DCMAKE_C_FLAGS_DEBUG=/MTd /Od /Ob0 /Zi /RTC1 /DDEBUG /D_DEBUG" "-DCMAKE_C_FLAGS_RELEASE=/MT /O2 /Ob2 /DNDEBUG" ${ZLIB})
 	WIN32_VS_DEBUG(zlib-1.2.11 zlib.sln zlibstatic)
 	WIN32_VS_RELEASE(zlib-1.2.11 zlib.sln zlibstatic)
-##ENDIF()
+ENDIF()
 
-
-##### CREATE 3rdParty2 #####
-##TODO
 
 
 ##### CREATE Plugin1 #####
