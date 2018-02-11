@@ -16,7 +16,7 @@ FILE(GLOB Plugin1_SRC
 	C:/digitalknob/DKPluginProject/Plugin1/*.c
 	C:/digitalknob/DKPluginProject/Plugin1/*.cpp)
 ADD_LIBRARY(Plugin1 STATIC ${Plugin1_SRC})
-SET_TARGET_PROPERTIES(DK PROPERTIES LINKER_LANGUAGE C11)
+SET_TARGET_PROPERTIES(Plugin1 PROPERTIES LINKER_LANGUAGE C11)
 
 ##### CREATE Plugin2 #####
 ##TODO
